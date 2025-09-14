@@ -1,0 +1,23 @@
+services:
+  # A "web" service is for a web server, which is what a Node.js app typically is.
+  - type: web
+    # The name of your service on Render. This will also be part of the URL.
+    name: simple-node-app
+    # The environment for your application. Render supports a wide variety, including Node.js.
+    env: node
+    # The branch to build from.
+    # Note: Make sure to replace "main" with the branch you want to deploy if it's different.
+    # branch: main
+    # This specifies the plan. For a simple app, "free" is a great way to start.
+    plan: free
+    # The command to install your dependencies before the application is built.
+    # It will run from the root directory of your repository.
+    buildCommand: npm install
+    # The command to start your server. This should match the "start" script in your package.json.
+    startCommand: npm start
+    # Environment variables are a key part of cloud deployments.
+    # Render automatically sets a PORT variable. Your Node.js app should listen on this.
+    # Example:
+    # envVars:
+    #   - key: MY_API_KEY
+    #     value: my-secret-value

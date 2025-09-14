@@ -7,7 +7,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE']
 }));
 app.get('/.well-known/assetlinks.json', (req, res) => {
-    return res.json([{
+    return res.header('Content-Type', 'application/json').json([{
         relation: ["delegate_permission/common.handle_all_urls"],
         target: {
             namespace: "android_app",
